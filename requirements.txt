@@ -1,0 +1,12 @@
+# Local LLM & Embeddings
+ollama
+
+# Vector Database (CPU version)
+faiss-cpu
+
+# PDF Processing
+PyPDF2
+
+# Numerical processing
+numpy
+
