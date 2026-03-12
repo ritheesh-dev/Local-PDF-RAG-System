@@ -1,6 +1,14 @@
+# Environments
 envi/
+venv/
 __pycache__/
-*.pkl
+
+# Local Vector Database (Don't upload these!)
 *.index
+*.pkl
+
+# OS files
 .DS_Store
-src/text.py
+
+# Example file
+src/text.py 
