@@ -11,6 +11,11 @@ Smart Chunking: Automatically breaks down large PDFs into manageable chunks with
 
 Persistence: Saves processed vectors and text chunks locally so you don't have to re-process the same PDF twice.
 
+Architecture diagram
+
+PDF → Chunking → Embeddings (nomic-embed-text) → FAISS Index
+Query → Embed → FAISS Search → Top-3 Chunks → Mistral → Answer
+
 🛠️ Tech Stack
 LLM & Embeddings: Ollama (Models: mistral and nomic-embed-text)
 
