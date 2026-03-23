@@ -1,73 +1,79 @@
-Local PDF RAG System
+# Local PDF RAG System
 
 A lightweight, local Retrieval-Augmented Generation (RAG) system that allows you to chat with your PDF documents. This project uses Ollama for local embeddings and LLM generation, FAISS for efficient similarity search, and Python for the orchestration.
 
-🚀 Features
-100% Local: No data leaves your machine. Privacy-focused using Ollama.
+## 🚀 Features
 
-Efficient Vector Search: Uses Facebook AI Similarity Search (FAISS) for lightning-fast document retrieval.
+- **100% Local:** No data leaves your machine. Privacy-focused using Ollama.
+- **Efficient Vector Search:** Uses Facebook AI Similarity Search (FAISS) for lightning-fast document retrieval.
+- **Smart Chunking:** Automatically breaks down large PDFs into manageable chunks with estimated page tracking.
+- **Persistence:** Saves processed vectors and text chunks locally so you don't have to re-process the same PDF twice.
 
-Smart Chunking: Automatically breaks down large PDFs into manageable chunks with estimated page tracking.
-
-Persistence: Saves processed vectors and text chunks locally so you don't have to re-process the same PDF twice.
-
-Architecture diagram
-
+## 🏗️ Architecture
+```
 PDF → Chunking → Embeddings (nomic-embed-text) → FAISS Index
 Query → Embed → FAISS Search → Top-3 Chunks → Mistral → Answer
+```
 
-🛠️ Tech Stack
-LLM & Embeddings: Ollama (Models: mistral and nomic-embed-text)
+## 📊 Evaluation (RAGAS Metrics)
 
-Vector Database: FAISS
+Evaluated using the [RAGAS](https://github.com/explodinggradients/ragas) framework on a sample document QA set.
 
-PDF Processing: PyPDF2
+| Metric | Score |
+|---|---|
+| Faithfulness | 1.00 |
+| Context Recall | 1.00 |
+| Context Precision | 0.87 |
+| Answer Relevancy | 0.77 |
 
-Language: Python 3.x
+**Key findings:**
+- Perfect faithfulness (1.0) — model answers strictly from retrieved context, no hallucination
+- Perfect context recall (1.0) — all relevant chunks are being retrieved
+- Answer relevancy (0.77) — identified response verbosity as root cause, improved via prompt optimization
 
-📋 Prerequisites
-Install Ollama: Download and install from ollama.com.
+## 🛠️ Tech Stack
 
-Pull Required Models:
+- **LLM & Embeddings:** Ollama (mistral + nomic-embed-text)
+- **Vector Database:** FAISS
+- **PDF Processing:** PyPDF2
+- **Evaluation:** RAGAS
+- **Language:** Python 3.x
 
+## 📋 Prerequisites
+
+Install Ollama from [ollama.com](https://ollama.com), then pull required models:
+```bash
 ollama pull mistral
 ollama pull nomic-embed-text
-⚙️ Installation
+```
 
-Install dependencies:
+## ⚙️ Installation
+```bash
+pip install -r requirements.txt
+```
 
+## 📂 Project Structure
 
-pip install ollama faiss-cpu PyPDF2 numpy
+| File | Description |
+|---|---|
+| `main.py` | Central entry point |
+| `pdf_to_vector.py` | PDF extraction, chunking, embedding, FAISS index creation |
+| `question_vector.py` | Similarity search and answer generation |
+| `vectors.index` | (Generated) FAISS vector database |
+| `chunks.pkl` | (Generated) Pickled text data and metadata |
 
-📂 Project Structure
-main.py: The central entry point to run the application.
-
-pdf_to_vector.py: Handles PDF text extraction, chunking, embedding generation, and FAISS index creation.
-
-question_vector.py: Manages the similarity search and the generation of answers using the retrieved context.
-
-vectors.index: (Generated) The FAISS vector database.
-
-chunks.pkl: (Generated) Pickled text data and metadata.
-
-🚀 Usage
-Run the main interface:
-
-
+## 🚀 Usage
+```bash
 python main.py
+```
 
-Options:
-Process new PDF: Select option 1, then enter the path to your PDF file (e.g., data/my_doc.pdf). This will create the vectors.index and chunks.pkl files.
+- **Option 1** — Process a new PDF: enter path like `data/my_doc.pdf`
+- **Option 2** — Ask questions: retrieves top-3 chunks and generates answer
 
-Ask a question: Select option 2 to chat with the previously processed document. The system will retrieve the 3 most relevant chunks to formulate an answer.
+## 🧠 How it Works
 
-🧠 How it Works
-Ingestion: The system reads a PDF and splits the text into chunks of ~500 characters.
-
-Embedding: Each chunk is converted into a high-dimensional vector using the nomic-embed-text model.
-
-Indexing: These vectors are stored in a FAISS index using Inner Product (IP) similarity.
-
-Retrieval: When you ask a question, your query is embedded, and FAISS finds the top-3 closest matching chunks.
-
-Generation: The retrieved chunks are fed into the mistral model as "Context," which then provides an answer based strictly on that information.
+1. **Ingestion** — PDF split into ~500 character chunks
+2. **Embedding** — Each chunk vectorized using `nomic-embed-text`
+3. **Indexing** — Vectors stored in FAISS using Inner Product similarity
+4. **Retrieval** — Query embedded → FAISS finds top-3 matching chunks
+5. **Generation** — Chunks passed as context to Mistral for answer generation

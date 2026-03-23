@@ -78,10 +78,3 @@ def pdf_to_vector(pdf_path):
         print(f"Sample vector (first 5 dims): {embeddings[0][:5]}")
 
         return embeddings, chunks
-#usage
-if __name__ =="__main__":
-    # Convert PDF to vectors (run this once)
-    pdf_file = "data/Project Documentaion 2.pdf" # My PDF file name
-    embeddings, chunks = pdf_to_vector(pdf_file)
-
-    print("\n Setup complete! Now you can run 'ask_questions.py' to chat with your PDF!" )

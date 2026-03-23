@@ -1,0 +1,50 @@
+{
+  "question": [
+    "What are the three steps of the RAG architecture?",
+    "What is the recommended chunk size according to the document?",
+    "What makes AI Agents different from standard chatbots?",
+    "What are the three metrics in the RAG Triad?",
+    "What embedding models does the document mention?"
+  ],
+  "answer": [
+    " Retrieval, Augmentation, and Generation",
+    " A standard starting point for the chunk size is 512 tokens with a 10% overlap.",
+    " AI Agents can use tools like web browsers, code execution environments, and databases, unlike standard chatbots.",
+    " The three metrics in the RAG Triad are Context Relevance, Faithfulness, and Answer Relevance.",
+    " The document mentions OpenAI's text-embedding-3-small and HuggingFace's all-MiniLM-L6-v2 as common choices for embedding models."
+  ],
+  "contexts": [
+    [
+      "es the answer address the user's query?  \n4. Technical Specifications  \n\u2022 Vector Database:  Common choices include Pinecone, Milvus, or Weaviate.  \n\u2022 Embedding Model:  Most systems use OpenAI's text -embedding -3-small or \nHuggingFace's all -MiniLM-L6-v2. \n\u2022 Chunk Size:  A standard starting point is 512 tokens  with a 10% overlap  to \nmaintain context between chunks.  \n ",
+      "Sample PDF Content: \"The Future of AI Agents\"  \nThis text is designed with distinct headings and specific facts to help you test if your \nRAG system is actually retrieving the right data.  \n1. Introduction to AI Agents  \nAI Agents are autonomous programs that use Large Language Models (LLMs) to perform \ntasks, make decisions, and interact with other software. Unlike standard chatbots, \nagents can use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  ",
+      "use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  \nRetrieval -Augmented Generation (RAG) is a technique used to give LLMs access to \nspecific, private, or up -to-date data without retraining the model.  \nThe process follows three main steps:  \n\u2022 Retrieval:  The system searches a vector database for relevant document \nchunks.  \n\u2022 Augmentation:  The retrieved text is added to the user's original prompt.  \n\u2022 Generation:  The LLM produces a response "
+    ],
+    [
+      "es the answer address the user's query?  \n4. Technical Specifications  \n\u2022 Vector Database:  Common choices include Pinecone, Milvus, or Weaviate.  \n\u2022 Embedding Model:  Most systems use OpenAI's text -embedding -3-small or \nHuggingFace's all -MiniLM-L6-v2. \n\u2022 Chunk Size:  A standard starting point is 512 tokens  with a 10% overlap  to \nmaintain context between chunks.  \n ",
+      "use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  \nRetrieval -Augmented Generation (RAG) is a technique used to give LLMs access to \nspecific, private, or up -to-date data without retraining the model.  \nThe process follows three main steps:  \n\u2022 Retrieval:  The system searches a vector database for relevant document \nchunks.  \n\u2022 Augmentation:  The retrieved text is added to the user's original prompt.  \n\u2022 Generation:  The LLM produces a response ",
+      "Sample PDF Content: \"The Future of AI Agents\"  \nThis text is designed with distinct headings and specific facts to help you test if your \nRAG system is actually retrieving the right data.  \n1. Introduction to AI Agents  \nAI Agents are autonomous programs that use Large Language Models (LLMs) to perform \ntasks, make decisions, and interact with other software. Unlike standard chatbots, \nagents can use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  "
+    ],
+    [
+      "Sample PDF Content: \"The Future of AI Agents\"  \nThis text is designed with distinct headings and specific facts to help you test if your \nRAG system is actually retrieving the right data.  \n1. Introduction to AI Agents  \nAI Agents are autonomous programs that use Large Language Models (LLMs) to perform \ntasks, make decisions, and interact with other software. Unlike standard chatbots, \nagents can use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  ",
+      "es the answer address the user's query?  \n4. Technical Specifications  \n\u2022 Vector Database:  Common choices include Pinecone, Milvus, or Weaviate.  \n\u2022 Embedding Model:  Most systems use OpenAI's text -embedding -3-small or \nHuggingFace's all -MiniLM-L6-v2. \n\u2022 Chunk Size:  A standard starting point is 512 tokens  with a 10% overlap  to \nmaintain context between chunks.  \n ",
+      "use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  \nRetrieval -Augmented Generation (RAG) is a technique used to give LLMs access to \nspecific, private, or up -to-date data without retraining the model.  \nThe process follows three main steps:  \n\u2022 Retrieval:  The system searches a vector database for relevant document \nchunks.  \n\u2022 Augmentation:  The retrieved text is added to the user's original prompt.  \n\u2022 Generation:  The LLM produces a response "
+    ],
+    [
+      "es the answer address the user's query?  \n4. Technical Specifications  \n\u2022 Vector Database:  Common choices include Pinecone, Milvus, or Weaviate.  \n\u2022 Embedding Model:  Most systems use OpenAI's text -embedding -3-small or \nHuggingFace's all -MiniLM-L6-v2. \n\u2022 Chunk Size:  A standard starting point is 512 tokens  with a 10% overlap  to \nmaintain context between chunks.  \n ",
+      "retrieved text is added to the user's original prompt.  \n\u2022 Generation:  The LLM produces a response based on the combined information.  \n3. Key Performance Metrics  \nTo evaluate a RAG system, developers often look at the \"RAG Triad\" : \n1. Context Relevance:  Is the retrieved data actually useful?  \n2. Faithfulness:  Is the answer derived strictly from the retrieved data?  \n3. Answer Relevance:  Does the answer address the user's query?  \n4. Technical Specifications  \n\u2022 Vector Database:  Common c",
+      "Sample PDF Content: \"The Future of AI Agents\"  \nThis text is designed with distinct headings and specific facts to help you test if your \nRAG system is actually retrieving the right data.  \n1. Introduction to AI Agents  \nAI Agents are autonomous programs that use Large Language Models (LLMs) to perform \ntasks, make decisions, and interact with other software. Unlike standard chatbots, \nagents can use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  "
+    ],
+    [
+      "use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  \nRetrieval -Augmented Generation (RAG) is a technique used to give LLMs access to \nspecific, private, or up -to-date data without retraining the model.  \nThe process follows three main steps:  \n\u2022 Retrieval:  The system searches a vector database for relevant document \nchunks.  \n\u2022 Augmentation:  The retrieved text is added to the user's original prompt.  \n\u2022 Generation:  The LLM produces a response ",
+      "es the answer address the user's query?  \n4. Technical Specifications  \n\u2022 Vector Database:  Common choices include Pinecone, Milvus, or Weaviate.  \n\u2022 Embedding Model:  Most systems use OpenAI's text -embedding -3-small or \nHuggingFace's all -MiniLM-L6-v2. \n\u2022 Chunk Size:  A standard starting point is 512 tokens  with a 10% overlap  to \nmaintain context between chunks.  \n ",
+      "Sample PDF Content: \"The Future of AI Agents\"  \nThis text is designed with distinct headings and specific facts to help you test if your \nRAG system is actually retrieving the right data.  \n1. Introduction to AI Agents  \nAI Agents are autonomous programs that use Large Language Models (LLMs) to perform \ntasks, make decisions, and interact with other software. Unlike standard chatbots, \nagents can use tools like web browsers, code execution environments, and databases.  \n2. The RAG Architecture  "
+    ]
+  ],
+  "ground_truth": [
+    "The three steps of RAG are: Retrieval (searching a vector database for relevant chunks), Augmentation (adding retrieved text to the user's prompt), and Generation (the LLM produces a response based on the combined information).",
+    "The recommended chunk size is 512 tokens with a 10% overlap to maintain context between chunks.",
+    "Unlike standard chatbots, AI Agents can use tools such as web browsers, code execution environments, and databases to perform tasks.",
+    "The RAG Triad consists of three metrics: Context Relevance (is the retrieved data useful?), Faithfulness (is the answer derived from retrieved data?), and Answer Relevance (does the answer address the query?).",
+    "The document mentions two embedding models: OpenAI's text-embedding-3-small and HuggingFace's all-MiniLM-L6-v2."
+  ]
+}

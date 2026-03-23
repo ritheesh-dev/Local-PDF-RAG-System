@@ -70,13 +70,4 @@ def ask_question(question):
         return None
 
 
-# Keep your ask_question function exactly as it is above...
 
-# ONLY run this part if this file is run directly
-if __name__ == "__main__":
-    user_query = input("Ask something: ")
-    answer = ask_question(user_query)
-
-    if answer:
-        print("\n--- AI RESPONSE ---")
-        print(answer)

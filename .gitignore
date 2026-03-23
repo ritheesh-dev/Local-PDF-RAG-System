@@ -12,3 +12,4 @@ __pycache__/
 
 # Example file
 src/text.py 
+data/
